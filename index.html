@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Paint Shop – Metallic Specialist | Burslem</title>
+  <meta name="description" content="The Paint Shop – Metallic Specialist. Professional paint and body repair for all vehicles in Burslem. Accident repair, resprays, scratch & dent removal, wheel refurbishment, and insurance work." />
+  <meta name="theme-color" content="#7CFC00" />
+  <!-- Social sharing (Facebook/WhatsApp/Google preview cards) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Paint Shop – Metallic Specialist" />
+  <meta property="og:description" content="Professional paint & body repair for all vehicles in Burslem. Call or WhatsApp for a quick quote." />
+  <meta property="og:image" content="images/og-cover.jpg" />
+  <meta property="og:image:alt" content="The Paint Shop – Metallic Specialist" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root{
+      --bg:#0b0d10;
+      --panel:#12161b;
+      --panel2:#0f1318;
+      --text:#e9eef4;
+      --muted:#a9b4c2;
+      --line:rgba(255,255,255,.12);
+      --accent:#7CFC00; /* lime green */
+      --accent2:#a6ff4d;
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --radius: 14px;
+      --max: 1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(124,252,0,.18), transparent 60%), var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{ color:inherit; }
+
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 0 18px; }
+
+    /* Top bar */
+    .topbar{
+      position: sticky;
+      top:0;
+      z-index: 10;
+      background: rgba(11,13,16,.72);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 12px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      letter-spacing:.4px;
+    }
+    .brand-badge{
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(124,252,0,.28), rgba(124,252,0,.08));
+      border:1px solid rgba(124,252,0,.35);
+      box-shadow: var(--shadow);
+    }
+    nav{ display:flex; gap:14px; color:var(--muted); font-weight:600; }
+    nav a{ text-decoration:none; opacity:.9; }
+    nav a:hover{ color:var(--text); }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      text-decoration:none;
+      font-weight:700;
+      box-shadow: none;
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover{ background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.18); }
+    .btn:active{ transform: translateY(1px); }
+    .btn-accent{
+      background: linear-gradient(180deg, rgba(124,252,0,.95), rgba(124,252,0,.72));
+      border-color: rgba(124,252,0,.65);
+      color:#0b0d10;
+    }
+    .btn-accent:hover{ background: linear-gradient(180deg, rgba(166,255,77,.98), rgba(124,252,0,.78)); }
+
+    /* Hero */
+    header.hero{
+      padding: 46px 0 22px;
+    }
+    .hero-card{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-inner{
+      padding: 34px 22px;
+      display:grid;
+      grid-template-columns: 1.25fr .9fr;
+      gap: 22px;
+      align-items:center;
+    }
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      color: var(--accent2);
+      font-weight: 800;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    h1{
+      margin: 10px 0 8px;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height:1.05;
+      letter-spacing: -.8px;
+    }
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16.5px;
+      max-width: 62ch;
+    }
+    .pillrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 18px;
+    }
+    .pill{
+      border:1px solid rgba(124,252,0,.22);
+      background: rgba(124,252,0,.06);
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-weight:700;
+      font-size: 13px;
+    }
+
+    .contactbox{
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(0,0,0,.22);
+      padding: 16px;
+    }
+    .contactbox h3{ margin:0 0 10px; font-size: 16px; }
+    .contactgrid{ display:grid; gap:10px; }
+    .contactrow{ display:flex; gap:10px; flex-wrap:wrap; }
+    .small{ color: var(--muted); font-size: 13px; }
+    .mono{ font-variant-numeric: tabular-nums; }
+
+    /* Sections */
+    section{ padding: 34px 0; }
+    .section-title{
+      font-size: 26px;
+      margin: 0 0 10px;
+      letter-spacing: -.2px;
+    }
+    .section-lead{ margin: 0 0 18px; color: var(--muted); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      box-shadow: 0 10px 26px rgba(0,0,0,.28);
+      padding: 16px;
+    }
+    .card h4{ margin:0 0 8px; }
+    .card p{ margin:0; color: var(--muted); }
+
+    .services .card{ grid-column: span 6; }
+
+    .why .card{ grid-column: span 4; }
+
+    /* Gallery */
+    .gallery-pair{ grid-column: span 12; padding: 0; overflow:hidden; }
+    .pair-head{ padding: 14px 16px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+    .pair-head strong{ letter-spacing:.2px; }
+    .pair-head span{ color: var(--muted); font-size: 13px; }
+    .pair-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    figure{ margin:0; position:relative; }
+    figure img{ width:100%; height: 320px; object-fit: cover; display:block; }
+    .tag{
+      position:absolute;
+      left:12px;
+      top:12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    .tag.before{ color: #fff; }
+    .tag.after{ color: var(--accent2); border-color: rgba(124,252,0,.55); }
+
+    /* Reviews */
+    .reviews .card{ grid-column: span 4; }
+    .stars{ color: var(--accent2); font-size: 14px; letter-spacing: 1px; }
+
+    /* Map */
+    .map{ padding: 0; overflow:hidden; }
+    .map iframe{ width:100%; height: 360px; border:0; display:block; }
+
+    footer{
+      border-top: 1px solid var(--line);
+      padding: 22px 0 30px;
+      color: var(--muted);
+    }
+
+    .mobile-cta{
+      display:none;
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 20;
+      gap: 10px;
+    }
+    .mobile-cta a{
+      flex: 1;
+      padding: 14px 12px;
+      border-radius: 14px;
+      text-align: center;
+      font-weight: 900;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .mobile-cta .call{ background: linear-gradient(180deg, rgba(124,252,0,.95), rgba(124,252,0,.72)); color:#0b0d10; border-color: rgba(124,252,0,.65); }
+    .mobile-cta .wa{ background: rgba(255,255,255,.06); color: var(--text); }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      nav{ display:none; }
+      .services .card{ grid-column: span 12; }
+      .why .card{ grid-column: span 12; }
+      .reviews .card{ grid-column: span 12; }
+      .pair-grid{ grid-template-columns: 1fr; }
+      figure img{ height: 260px; }
+
+      /* Mobile quick actions */
+      .mobile-cta{ display:flex; }
+      body{ padding-bottom: 74px; }
+    }
+
+    /* Print safety */
+    @media print{
+      .topbar{ position: static; }
+      .btn{ display:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="row">
+        <div class="brand" aria-label="The Paint Shop – Metallic Specialist">
+          <div class="brand-badge" aria-hidden="true"></div>
+          <div>
+            <div style="font-size:14px;">THE PAINT SHOP</div>
+            <div class="small" style="margin-top:-2px;">METALLIC SPECIALIST</div>
+          </div>
+        </div>
+        <nav aria-label="Site navigation">
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
+          <a class="btn btn-accent" href="tel:01782284348">Call: <span class="mono">01782 284348</span></a>
+          <a class="btn" href="https://wa.me/447979750384">WhatsApp: <span class="mono">07979 750384</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="hero-inner">
+          <div>
+            <div class="kicker">Paint • Bodywork • Metallic Finishes</div>
+            <h1>Professional Paint &amp; Body Repair for All Vehicles</h1>
+            <p class="sub">From minor scratches to full accident repairs, we deliver quality workmanship, accurate colour matching, and a finish you can be proud of. Cars, vans, classics, commercial vehicles &amp; more.</p>
+            <div class="pillrow" aria-label="Key highlights">
+              <div class="pill">Walk-ins welcome</div>
+              <div class="pill">Insurance work</div>
+              <div class="pill">Cars • Vans • Commercial</div>
+              <div class="pill">Metallic specialist</div>
+            </div>
+          </div>
+          <div class="contactbox">
+        <h3>Get a quick quote</h3>
+        <div class="contactgrid">
+          <div class="card" style="padding:12px; background: rgba(0,0,0,.25);">
+            <div style="font-weight:800;">Phone</div>
+            <div class="mono"><a href="tel:01782284348">01782 284348</a></div>
+            <div class="mono" style="margin-top:6px;">
+              <a href="tel:07979750384">07979 750384</a> / <a href="tel:07759324246">07759 324246</a>
+            </div>
+          </div>
+          <div class="card" style="padding:12px; background: rgba(0,0,0,.25);">
+            <div style="font-weight:800;">Address</div>
+            <div>Unit 12, Bridge Industrial Estate</div>
+            <div>Hot Lane, Burslem, <span class="mono">ST6 2DL</span></div>
+          </div>
+          <div class="card" style="padding:12px; background: rgba(0,0,0,.25);">
+            <div style="font-weight:800;">Opening Times</div>
+            <div>Monday – Friday: <span class="mono">8:00 am – 5:00 pm</span></div>
+          </div>
+          <div class="contactrow">
+            <a class="btn btn-accent" href="#contact">Contact details</a>
+            <a class="btn" href="#map">View map</a>
+          </div>
+          <div class="small">Tip: WhatsApp photos of the damage for the fastest quote.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </header>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-lead">Quality repairs and paintwork for all vehicle types. If you're not sure what you need, give us a call or pop in.</p>
+      <div class="grid services">
+        <div class="card"><h4>Accident &amp; Collision Repair</h4><p>Body repairs following accidents, completed to a high professional standard.</p></div>
+        <div class="card"><h4>Paint Resprays &amp; Metallic Finishes</h4><p>Specialists in metallic paint and accurate colour matching for a flawless finish.</p></div>
+        <div class="card"><h4>Scratch &amp; Dent Repair</h4><p>Cost-effective cosmetic repairs to keep your vehicle looking its best.</p></div>
+        <div class="card"><h4>Commercial &amp; Fleet Vehicles</h4><p>Repairs for vans and commercial vehicles — ideal for keeping your business moving.</p></div>
+        <div class="card"><h4>Insurance Work</h4><p>We can carry out insurance repairs and work with insurers where required.</p></div>
+        <div class="card"><h4>Wheel Refurbishment</h4><p>Alloy wheel preparation and refinishing for a fresh, clean look.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <h2 class="section-title">Why Choose The Paint Shop</h2>
+      <p class="section-lead">We've built our reputation on quality workmanship, honest advice, and a finish that lasts.</p>
+      <div class="grid">
+        <div class="card"><h4>Experienced team</h4><p>Years of hands-on paint and body repair experience.</p></div>
+        <div class="card"><h4>All vehicles welcome</h4><p>Cars, vans, classics, commercial and specialist vehicles.</p></div>
+        <div class="card"><h4>Attention to detail</h4><p>Careful preparation and accurate colour matching.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <h2 class="section-title">Before &amp; After Gallery</h2>
+      <p class="section-lead">Below are examples of our real repair work. Replace the image file names with your own photos once uploaded to your website.</p><!--
+    HOW TO ADD YOUR PHOTOS
+    1) Create a folder called "images" next to this HTML file.
+    2) Put your photos in there.
+    3) Replace the src="images/..." below.
+  -->
+
+  <div class="grid">
+
+    <div class="card gallery-pair">
+      <div class="pair-head"><strong>Mini digger repaint</strong><span>Before → After</span></div>
+      <div class="pair-grid">
+        <figure><span class="tag before">Before</span><img loading="lazy" decoding="async" src="images/excavator-before.jpg" alt="Mini digger before paint" /></figure>
+        <figure><span class="tag after">After</span><img loading="lazy" decoding="async" src="images/excavator-after.jpg" alt="Mini digger after paint" /></figure>
+      </div>
+    </div>
+
+    <div class="card gallery-pair">
+      <div class="pair-head"><strong>Kit car respray</strong><span>Before → After</span></div>
+      <div class="pair-grid">
+        <figure><span class="tag before">Before</span><img loading="lazy" decoding="async" src="images/kitcar-before.jpg" alt="Kit car before respray" /></figure>
+        <figure><span class="tag after">After</span><img loading="lazy" decoding="async" src="images/kitcar-after.jpg" alt="Kit car after respray" /></figure>
+      </div>
+    </div>
+
+    <div class="card gallery-pair">
+      <div class="pair-head"><strong>Alloy wheel refurbishment</strong><span>Before → After</span></div>
+      <div class="pair-grid">
+        <figure><span class="tag before">Before</span><img loading="lazy" decoding="async" src="images/wheels-before.jpg" alt="Alloy wheels before refurbishment" /></figure>
+        <figure><span class="tag after">After</span><img loading="lazy" decoding="async" src="images/wheels-after.jpg" alt="Alloy wheels after refurbishment" /></figure>
+      </div>
+    </div>
+
+    <div class="card gallery-pair">
+      <div class="pair-head"><strong>VW camper van paintwork</strong><span>Before → After</span></div>
+      <div class="pair-grid">
+        <figure><span class="tag before">Before</span><img loading="lazy" decoding="async" src="images/vwcamper-before.jpg" alt="VW van before paintwork" /></figure>
+        <figure><span class="tag after">After</span><img loading="lazy" decoding="async" src="images/vwcamper-after.jpg" alt="VW van after paintwork" /></figure>
+      </div>
+    </div>
+
+    <div class="card gallery-pair">
+      <div class="pair-head"><strong>Classic car restoration</strong><span>Before → After</span></div>
+      <div class="pair-grid">
+        <figure><span class="tag before">Before</span><img loading="lazy" decoding="async" src="images/classic-before.jpg" alt="Classic car before restoration" /></figure>
+        <figure><span class="tag after">After</span><img loading="lazy" decoding="async" src="images/classic-after.jpg" alt="Classic car after restoration" /></figure>
+      </div>
+    </div>
+
+    <div class="card gallery-pair">
+      <div class="pair-head"><strong>Custom colour change</strong><span>Before → After</span></div>
+      <div class="pair-grid">
+        <figure><span class="tag before">Before</span><img loading="lazy" decoding="async" src="images/colourchange-before.jpg" alt="Vehicle before colour change" /></figure>
+        <figure><span class="tag after">After</span><img loading="lazy" decoding="async" src="images/colourchange-after.jpg" alt="Vehicle after colour change" /></figure>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  </section>
+
+  <section id="reviews" class="reviews">
+    <div class="wrap">
+      <h2 class="section-title">Customer Reviews</h2>
+      <p class="section-lead">A few recent words from customers. (Replace with your real reviews any time.)</p>
+      <div class="grid">
+        <div class="card">
+          <div class="stars">★★★★★</div>
+          <p>"Fantastic job from start to finish. The paintwork looks brand new and the service was spot on."</p>
+        </div>
+        <div class="card">
+          <div class="stars">★★★★★</div>
+          <p>"Honest, reliable and a top job on my van. Wouldn't take it anywhere else."</p>
+        </div>
+        <div class="card">
+          <div class="stars">★★★★★</div>
+          <p>"Quick turnaround and excellent finish after an accident repair. Highly recommended."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2 class="section-title">Visit or Contact Us</h2>
+      <p class="section-lead">Phone calls, WhatsApp and walk-ins welcome.</p>
+      <div class="grid">
+    <div class="card" style="grid-column: span 6;">
+      <h4>Contact</h4>
+      <p style="margin-top:10px;"><strong>Phone:</strong> <a class="mono" href="tel:01782284348">01782 284348</a></p>
+      <p><strong>Mobile:</strong> <a class="mono" href="tel:07979750384">07979 750384</a> / <a class="mono" href="tel:07759324246">07759 324246</a></p>
+      <p><strong>WhatsApp:</strong> <a class="mono" href="https://wa.me/447979750384">07979 750384</a></p>
+      <p><strong>Opening Times:</strong> Monday – Friday: <span class="mono">8:00 am – 5:00 pm</span></p>
+      <p class="small">Walk-ins welcome during opening hours.</p>
+    </div>
+
+    <div class="card" style="grid-column: span 6;">
+      <h4>Address</h4>
+      <p style="margin-top:10px;">Unit 12, Bridge Industrial Estate<br />Hot Lane, Burslem<br /><span class="mono">ST6 2DL</span></p>
+      <p class="small">Tap "View map" above for directions.</p>
+    </div>
+  </div>
+</div>
+
+  </section>
+
+  <section id="map">
+    <div class="wrap">
+      <h2 class="section-title">Find Us</h2>
+      <p class="section-lead">Google Map pin for: Unit 12, Bridge Industrial Estate, Hot Lane, Burslem, ST6 2DL</p>
+      <div class="card map">
+        <iframe
+          title="Google Map - The Paint Shop Metallic Specialist"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Unit%2012%20Bridge%20Industrial%20Estate%20Hot%20Lane%20Burslem%20ST6%202DL&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div>© <span class="mono">2026</span> The Paint Shop – Metallic Specialist</div>
+        <div class="small">Built for Burslem • Paint &amp; body repair</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile quick actions (shows on phones) -->
+  <div class="mobile-cta" aria-label="Quick actions">
+    <a class="call" href="tel:01782284348">Call</a>
+    <a class="wa" href="https://wa.me/447979750384">WhatsApp</a>
+  </div>
+</body>
+</html>
